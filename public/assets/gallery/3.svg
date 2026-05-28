@@ -1,0 +1,30 @@
+<svg id="_3" data-name="3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1013" height="608" viewBox="0 0 1013 608">
+  <defs>
+    <clipPath id="clip-path">
+      <rect y="260" width="1013" height="608" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect x="44" y="57" width="70" height="57" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect width="70" height="57" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Scroll_Group_5" data-name="Scroll Group 5" transform="translate(0 -260)" clip-path="url(#clip-path)" style="isolation: isolate">
+    <rect id="dezoomify-result_7_" data-name="dezoomify-result (7)" width="1013" height="868" fill="#dfdedd"/>
+  </g>
+  <g id="Group_15" data-name="Group 15" transform="translate(-6 -60)" style="mix-blend-mode: difference;isolation: isolate">
+    <g id="Scroll_Group_11" data-name="Scroll Group 11" transform="translate(415 255)" clip-path="url(#clip-path-2)" style="isolation: isolate">
+      <g id="Rectangle_36" data-name="Rectangle 36" fill="none" stroke="#fff" stroke-width="25">
+        <rect width="114" height="114" rx="37" stroke="none"/>
+        <rect x="12.5" y="12.5" width="89" height="89" rx="24.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Scroll_Group_12" data-name="Scroll Group 12" transform="translate(499 360)" clip-path="url(#clip-path-3)" style="isolation: isolate">
+      <g id="Rectangle_38" data-name="Rectangle 38" fill="none" stroke="#fff" stroke-width="25">
+        <rect width="114" height="114" rx="37" stroke="none"/>
+        <rect x="12.5" y="12.5" width="89" height="89" rx="24.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
