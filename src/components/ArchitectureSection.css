@@ -1,0 +1,211 @@
+/* Google Fonts'tan Geist (400 ve 500 kalınlıkları ile birlikte) yüklendi */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap');
+
+.architecture-section {
+  width: 100%;
+  background: #EFEEEC;
+  /* Beyaz arka plan */
+  color: #111212;
+  /* Siyah yazı rengi */
+  position: relative;
+  z-index: 10;
+  font-family: 'Geist', sans-serif;
+
+  /* Köşeler rafine ve az yuvarlatılmış */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding-bottom: 200px;
+  /* Galeri pinned bittikten sonraki boşluk */
+}
+
+
+.architecture-section__inner {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  /* Ustteki bosluk minimuma indirildi ki scroll baslar baslamaz yazilar aninda gorunsun. */
+  padding: 80px clamp(24px, 4vw, 40px) 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.architecture-section__badge {
+  width: auto;
+  height: 48px;
+  margin-bottom: 12px;
+  opacity: 0;
+}
+
+/* Badge altındaki %40 opaklıkta yazı */
+.architecture-section__subtitle {
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.01em;
+  opacity: 0;
+}
+
+.architecture-section__title {
+  margin: 0;
+  font-size: 72px;
+  /* 72px boyutunda */
+  font-weight: 500;
+  /* 500 kalınlıkta */
+  line-height: 1.15;
+  letter-spacing: -0.06em;
+  /* Harf arası istendiği gibi -0.03em */
+  color: #010101;
+  position: relative;
+  opacity: 0;
+}
+
+/* Sağ üst köşede, çok daha yukarıda konumlandırılmış Superscript */
+.architecture-section__superscript {
+  font-size: 24px;
+  /* Sabit 24px boyutu */
+  font-weight: 500;
+  /* 500 kalınlıkta */
+  position: relative;
+  top: -24px;
+  /* Başlığın sağ üstüne çekebilmek için piksel bazlı yukarı kaydırıldı */
+  margin-left: -2px;
+  color: #010101;
+  vertical-align: super;
+  letter-spacing: -0.03em
+}
+
+@media (max-width: 768px) {
+  .architecture-section {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding-bottom: 120px;
+  }
+
+  .architecture-section__inner {
+    padding: clamp(60px, 8vw, 100px) 20px;
+  }
+
+  .architecture-section__subtitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .architecture-section__title {
+    font-size: 38px;
+    /* Mobil uyumluluk için ölçeklendi */
+  }
+
+  .architecture-section__badge {
+    height: 38px;
+    margin-bottom: 8px;
+  }
+
+  .architecture-section__superscript {
+    font-size: 14px;
+    /* Mobilde başlığın yanında çok devasa durmaması için küçültüldü */
+    top: -16px;
+  }
+}
+
+/* Horizontal Scroll Gallery Container */
+.architecture-gallery-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* Hide horizontal scrollbar */
+  width: 100%;
+}
+
+.architecture-gallery-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* Centering the first and last card */
+  padding: 0 3vw;
+}
+
+.architecture-gallery-item {
+  flex-shrink: 0;
+  width: min(calc(100vw - 6vw), calc((100vh - 212px) * 5 / 3));
+  width: min(calc(100vw - 6vw), calc((100dvh - 212px) * 5 / 3));
+  aspect-ratio: 5 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.architecture-gallery-caption {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  text-align: left;
+  z-index: 5;
+  mix-blend-mode: difference;
+  width: calc(100% - 64px);
+  opacity: 0;
+  /* Varsayılan olarak gizli */
+  visibility: hidden;
+  /* Tıklanamaması vb. için görünmezlik garantisi */
+  transform: translateY(10px);
+  /* Hafif aşağıdan gelme efekti */
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+}
+
+/* Scroll sonucu tam öne gelen (ortadaki) karta atanacak sınıf */
+.architecture-gallery-item.is-active .architecture-gallery-caption {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.architecture-gallery-caption-brand {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.architecture-gallery-caption-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  /* Regular weight */
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.architecture-gallery-image-box {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 5 / 3;
+  background-color: #929292;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  /* Optional: soft shadow for depth */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.architecture-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .architecture-gallery-wrapper {
+    gap: 12px;
+    padding: 0 3vw;
+  }
+
+  .architecture-gallery-item {
+    width: min(calc(100vw - 6vw), calc((100vh - 180px) * 5 / 3));
+    width: min(calc(100vw - 6vw), calc((100dvh - 180px) * 5 / 3));
+  }
+}

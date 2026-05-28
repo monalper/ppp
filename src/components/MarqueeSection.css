@@ -1,0 +1,72 @@
+.marquee-section {
+    width: 100%;
+    background: #EFEEEC;
+    color: #111212;
+    position: relative;
+    z-index: 20;
+
+    /* Köşe yuvarlamaları */
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
+
+    overflow: hidden;
+    padding: 120px 0;
+}
+
+.marquee-section__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.marquee-text-container {
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* GSAP ile hareket eden ana satır */
+.marquee-wrapper {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    /* Ekran kartı (GPU) desteğiyle pürüzsüz kayma */
+}
+
+.marquee-text {
+    font-size: clamp(80px, 12vw, 160px);
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0;
+    color: #010101;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+/* public klasöründen gelen SVG ikonunun stilleri */
+.marquee-dot {
+    height: clamp(24px, 3vw, 40px);
+    /* Yazı büyüklüğüne göre dinamik ölçeklenir */
+    width: auto;
+    margin: 0 40px;
+    /* Metinler ile ikon arasındaki boşluk */
+    flex-shrink: 0;
+    /* İkonun genişliğinin ezilmesini engeller */
+}
+
+@media (max-width: 768px) {
+    .marquee-section {
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+        padding: 80px 0;
+    }
+
+    .marquee-dot {
+        margin: 0 20px;
+        /* Mobilde daha dar boşluk */
+    }
+}

@@ -1,0 +1,104 @@
+/* Yazı tipi yüklemesi */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+.studio-404-container {
+    min-height: 100vh;
+    background-color: #EFEEEC;
+    color: #111212;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+/* Üst Bar ve Logo Alanı */
+.studio-404-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.studio-404-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Orta Gövde */
+.studio-404-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+    margin: auto 0;
+}
+
+.studio-404-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem 0;
+    color: rgba(17, 18, 18, 0.4);
+}
+
+.studio-404-title span {
+    color: #111212;
+}
+
+/* Açıklama Metni */
+.studio-404-message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #525252;
+    max-width: 100%;
+    margin: 0 0 2.5rem 0;
+}
+
+/* Çizgisiz Minimal Buton / Link */
+.studio-404-link {
+    color: #111212;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Üzerine gelindiğinde zarif bir sağa kayma efekti */
+.studio-404-link:hover {
+    opacity: 0.6;
+    transform: translateX(4px);
+}
+
+/* Alt Kısım */
+.studio-404-footer {
+    width: 100%;
+}
+
+/* --- MASAÜSTÜ OPTİMİZASYONU --- */
+@media (min-width: 768px) {
+    .studio-404-container {
+        padding: 4rem 5rem;
+    }
+
+    .studio-404-logo {
+        height: 48px;
+    }
+
+    .studio-404-title {
+        font-size: 4rem;
+        margin: 0 0 2rem 0;
+    }
+
+    .studio-404-message {
+        font-size: 1.05rem;
+        max-width: 85%;
+    }
+}

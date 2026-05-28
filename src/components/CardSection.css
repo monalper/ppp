@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.card-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.canvas-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    clip-path: inset(75px 24px 24px 24px round 24px);
+}
+
+.card-section-black-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Kapsayıcı grid; iki ayrı genişlikteki grubu tam olarak üst üste bindirir */
+.canvas-header-group {
+    position: absolute;
+    top: 140px;
+    left: calc(max(0px, (100% - 1440px) / 2) + clamp(24px, 4vw, 40px));
+    z-index: 20;
+    mix-blend-mode: difference;
+    pointer-events: none;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* Her grup sadece kendi başlığının genişliği (max-content) kadar alan kaplar */
+.content-group {
+    grid-column: 1;
+    grid-row: 1;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* --- BAŞLANGIÇ GİZLİLİK DURUMLARI (GSAP kontrolünde) --- */
+
+.canvas-title {
+    margin: 0;
+    font-family: 'Geist', sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    white-space: nowrap;
+
+    opacity: 0;
+    transform: translateY(25px);
+    /* Başlıklar alttan gelerek açılacak */
+}
+
+/* İkinci başlık ilk başta biraz daha aşağıda saklansın */
+.eng-group .canvas-title {
+    transform: translateY(45px);
+}
+
+.canvas-title-italic {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 54px;
+}
+
+/* Listeler doğrudan bağlı oldukları üst grubun genişliğini (%100) miras alır */
+.canvas-principles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.canvas-index-row {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+
+    opacity: 0;
+    transform: translateY(15px);
+    /* Satırlar da bağımsız olarak alttan süzülecek */
+}
+
+/* İkinci grubun satırları ilk başta biraz daha aşağıda bekler */
+.eng-group .canvas-index-row {
+    transform: translateY(30px);
+}
+
+.index-roman {
+    flex-shrink: 0;
+    min-width: 24px;
+}
+
+.index-dots {
+    flex-grow: 1;
+    margin: 0 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+    height: 1px;
+}
+
+.index-text {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.canvas-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .canvas-header-group {
+        top: 80px;
+        left: clamp(24px, 4vw, 40px);
+    }
+
+    .canvas-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .canvas-header-group {
+        top: 60px;
+        left: 20px;
+    }
+
+    .canvas-title {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .canvas-index-row {
+        font-size: 11px;
+    }
+
+    .content-group {
+        width: calc(100vw - 40px);
+    }
+}

@@ -1,0 +1,89 @@
+.cookie-notice {
+  --cookie-square-size: clamp(168px, 22vw, 220px);
+  --cookie-radius: 12px;
+  position: fixed;
+  right: clamp(16px, 2vw, 28px);
+  bottom: clamp(16px, 2vw, 28px);
+  width: var(--cookie-square-size);
+  z-index: 20;
+}
+
+/* Üst kutu: İçindeki görseli tam ortalamak için flex eklendi */
+.cookie-notice__top {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #929292;
+  border-top-left-radius: var(--cookie-radius);
+  border-top-right-radius: var(--cookie-radius);
+  box-shadow: inset 0 0 0 4px #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Görselin kenarlardan taşmaması ve şık durması için güvenli alan */
+  box-sizing: border-box;
+}
+
+/* Kurabiye görselinin iyi konumlandırılması için kurallar */
+.cookie-notice__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Görselin oranını bozmadan kutuya sığdırır */
+  pointer-events: none; /* Kullanıcının görseli yanlışlıkla sürüklemesini engeller */
+}
+
+.cookie-notice__bottom {
+  width: 100%;
+  background: #f6f6f6;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom-left-radius: var(--cookie-radius);
+  border-bottom-right-radius: var(--cookie-radius);
+  box-sizing: border-box;
+}
+
+.cookie-notice__text {
+  margin: 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.35;
+  width: 100%;
+}
+
+.cookie-notice__button {
+  width: fit-content;
+  min-width: 92px;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: #fed008;
+  color: #000;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .cookie-notice {
+    --cookie-square-size: 148px;
+    --cookie-radius: 8px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .cookie-notice__top {
+    padding: 16px; /* Mobilde görsel alanını biraz daha optimize ettik */
+  }
+
+  .cookie-notice__bottom {
+    padding: 14px;
+  }
+
+  .cookie-notice__text,
+  .cookie-notice__button {
+    font-size: 13px;
+  }
+}

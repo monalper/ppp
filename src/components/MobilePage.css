@@ -1,0 +1,64 @@
+/* Yazı tipi yüklemesi */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+.studio-mobile-container {
+    min-height: 100vh;
+    background-color: #EFEEEC;
+    /* Premium, pürüzsüz siyah */
+    color: #111212;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Üst, orta ve altı dengeli dağıtır */
+    padding: 3.5rem 2rem;
+    box-sizing: border-box;
+}
+
+/* Üst Bar ve Logo Alanı */
+.studio-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.studio-mobile-logo {
+    height: 48px;
+    /* Logonuzun dikey hizasına göre yüksekliği ayarlayabilirsiniz */
+    width: auto;
+    display: block;
+}
+
+/* Orta Gövde */
+.studio-mobile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: -1rem;
+}
+
+/* Büyük, Net ve İnce Tipografi */
+.studio-mobile-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 2rem 0;
+    color: rgba(60, 61, 61, 0.623);
+}
+
+.studio-mobile-title span {
+    color: #111212;
+    /* Ana vurgu rengi */
+}
+
+/* Açıklama Metni */
+.studio-mobile-message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 500;
+    color: rgba(60, 61, 61, 0.623);
+    max-width: 90%;
+    margin: 0;
+}

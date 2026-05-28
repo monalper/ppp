@@ -1,0 +1,91 @@
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #111;
+  background-color: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: #DDDCDC;
+  color: #201D1D
+}
+
+::-moz-selection {
+  background-color: rgb(0, 0, 0);
+  color: #fff
+}
+
+/* ==========================================
+   ÖZEL İMLEÇ (CUSTOM CURSOR) AYARLARI
+   ========================================== */
+
+/* Gerçek imleci tüm sitede ve tıklanabilir elemanlarda gizliyoruz */
+body,
+a,
+button,
+[role="button"] {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  width: 32px;
+  /* SVG'nin genişliği (isteğe göre değiştirebilirsin) */
+  height: 32px;
+  /* SVG'nin yüksekliği */
+  background-image: url('/cursor.svg');
+  /* public/cursor.svg konumunda olmalı */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* Altındaki elementlere tıklayabilmek için şart */
+  z-index: 9999;
+  /* Her zaman en üstte kalması için */
+  mix-blend-mode: difference;
+  /* İstediğin renk efekti */
+  transform: translate(-50%, -50%);
+  /* İmleç ucunu merkeze hizalamak için */
+  will-change: transform;
+  /* Performans optimizasyonu */
+  transition: background-image 0.2s ease, transform 0.1s ease-out;
+  /* Görsel geçişi yumuşatmak için */
+}
+
+/* Buton veya Link üzerine gelindiğinde aktif olacak CSS */
+.custom-cursor.hovered {
+  background-image: url('/cursor-2.svg');
+  /* public/cursor-2.svg konumunda olmalı */
+  /* İstersen hover durumunda imleci büyütebilirsin, opsiyonel: */
+  /* width: 40px; */
+  /* height: 40px; */
+}

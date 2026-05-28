@@ -1,0 +1,186 @@
+/* Alt Alan Kapsayıcısı */
+.site-footer-container {
+    background-color: #0d0e0e;
+    padding-bottom: 12px;
+    margin-top: -64px;
+    padding-top: 64px;
+}
+
+.site-footer {
+    background-color: #0d0e0e;
+    color: #efeeec;
+    margin: 0 12px;
+    border-radius: 32px;
+    padding: 90px 80px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    will-change: transform;
+
+    /* Geist Font Entegrasyonu */
+    font-family: 'Geist', 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Üst Düzen */
+.site-footer__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 64px;
+    width: 100%;
+}
+
+/* Sol Taraf: Logo ve İletişim */
+.site-footer__col-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 450px;
+}
+
+/* Minimal Logo Ayarı */
+.site-footer__logo {
+    height: 64px;
+    width: auto;
+    display: block;
+}
+
+.site-footer__email {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #efeeec;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    transition: opacity 0.3s ease;
+}
+
+.site-footer__email:hover {
+    opacity: 0.7;
+}
+
+/* Sağ Taraf: Link Grupları */
+.site-footer__col-links {
+    display: flex;
+    gap: 100px;
+}
+
+.site-footer__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.site-footer__link {
+    color: #efeeec;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.site-footer__link:hover {
+    color: #8a8a8e;
+    transform: translateX(4px);
+}
+
+/* --- Apple Tarzı Metin Kaynakça (Fine Print) --- */
+.site-footer__credits {
+    margin-top: 20px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 960px; /* Okunabilirliği artırmak için metin genişliğini sınırladık */
+}
+
+.site-footer__credits-text {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #6e6e73; /* Apple'ın meşhur alt metin gri tonu */
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.site-footer__credits-text strong {
+    color: #8a8a8e;
+    font-weight: 500;
+}
+
+.site-footer__credits-text em {
+    font-style: italic;
+    color: #8a8a8e;
+}
+
+/* Alt Kısım */
+.site-footer__bottom {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #6e6e73;
+}
+
+.site-footer__copyright {
+    margin: 0;
+}
+
+.site-footer__location {
+    font-weight: 400;
+    color: #6e6e73;
+}
+
+/* --- RESPONSIVE (MOBİL) --- */
+@media (max-width: 1024px) {
+    .site-footer {
+        padding: 80px 40px 30px 40px;
+    }
+
+    .site-footer__col-links {
+        gap: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        margin: 0 8px 8px 8px;
+        padding: 60px 24px 24px 24px;
+        border-radius: 24px;
+    }
+
+    .site-footer__main {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .site-footer__email {
+        font-size: 1.85rem;
+    }
+
+    .site-footer__col-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .site-footer__credits {
+        margin-top: 48px;
+    }
+
+    .site-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 32px;
+    }
+}

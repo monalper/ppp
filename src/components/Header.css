@@ -1,0 +1,117 @@
+/* Ana Header Kabuğu - Sayfa kaydırıldıkça yapışkan ve takipçi */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: transparent;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  /* Make header pass-through so you can scroll smoothly over elements, we only enable pointer events for interactive things */
+}
+
+/* İçerik Konteyneri */
+.site-header__container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(24px, 4vw, 40px);
+  pointer-events: auto;
+  /* Re-enable for the container content */
+  /* Padding değerleri dikeyde hafif artırıldı */
+}
+
+.site-header__brand,
+.site-header__copy,
+.site-header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__brand {
+  gap: 14px;
+}
+
+/* Logo Renk Geçiş Efekti */
+.site-header__logo {
+  width: auto;
+  height: 42px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.site-header__copy {
+  gap: 10px;
+}
+
+/* Renk Değişimi Geçişleri İçin Transition Tanımlamaları */
+.site-header__name,
+.site-header__label,
+.site-header__donate,
+.site-header__nav-link {
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Varsayılan Durum (Koyu Arka Plan Üzerinde Beyaz Yazılar) */
+.site-header__name,
+.site-header__donate,
+.site-header__nav-link {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.site-header__label {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.site-header__nav-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Contact menüsünü diğer sol objelerden sağa itmek için dinamik margin eklendi */
+.site-header__contact-wrapper {
+  margin-left: clamp(5px, 2vw, 15px);
+}
+
+.site-header__actions {
+  gap: 20px;
+}
+
+.site-header__donate {
+  transition: opacity 0.2s ease;
+}
+
+.site-header__donate:hover {
+  opacity: 0.72;
+}
+
+/* Mobil Uyum */
+@media (max-width: 640px) {
+  .site-header__container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .site-header__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
